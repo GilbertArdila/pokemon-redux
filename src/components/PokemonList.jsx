@@ -1,15 +1,27 @@
 import {PokeCart} from './PokeCart';
 import React from 'react';
 import './PokemonList.css';
+import { useSelector } from 'react-redux';
 
 
 
 const PokemonList = ({pokemons}) => {
-  console.log(pokemons)
+
+ 
+  
   return (
     <div className='PokemonList'>
     {pokemons.map((pokemon)=>{
-       return <PokeCart  name={pokemon.name} key={pokemon.name}/>
+       return <PokeCart  
+       name={pokemon.name} 
+       image={pokemon.sprites.front_default} 
+       abilities={pokemon.abilities}
+       types={pokemon.types}
+       id={pokemon.id}
+       favorite={pokemon.favorite}
+      
+       key={pokemon.name}/>
+       
     })}
     </div>
   )

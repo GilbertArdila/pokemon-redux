@@ -4,7 +4,7 @@ import React from 'react'
 
 const Searcher = () => {
   return (
-    <Input.Search placeholder='search...'/>
+    <Input.Search placeholder='search...' style={{marginBottom: 20}}/>
   )
 }
 
