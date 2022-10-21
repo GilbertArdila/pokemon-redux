@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import {useSelector,useDispatch} from 'react-redux';
 import { getPokemonsWithDetails, setLoading} from './actions';
 import { getPokemon } from './api';
@@ -12,6 +12,7 @@ function App() {
   const pokemons=useSelector(state=>state.pokemons);
   const loading=useSelector(state=>state.loading);
   const dispatch=useDispatch();
+  const [filteredPokemons, setFilteredPokemons] = useState('');
 
 useEffect(() => {
  
@@ -29,17 +30,24 @@ const fetchPokemons=async()=>{
  dispatch(setLoading(false))
  };
 
+ const searchedPokemons=pokemons.filter((pokemon)=>{
+ 
+  return(
+   pokemon.name.toLowerCase().includes(filteredPokemons.toLowerCase()) 
+  )
+ })
+ 
   return (
     <div className="App">
       <Col span={4} offset={10}><img src={logo} alt='pokemon logo'/></Col>
       <Col span={8} offset={8}>
-     <Searcher /> 
+     <Searcher value={filteredPokemons} onChange={(e)=>setFilteredPokemons(e.target.value)} /> 
      </Col>
 
      {loading ? 
       <Col offset={12}>
       <Spin spinning size='large'/>
-      </Col>:<PokemonList pokemons={pokemons}/>}
+      </Col>:<PokemonList pokemons={searchedPokemons}/>}
     
      
     </div>

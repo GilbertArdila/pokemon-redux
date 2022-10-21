@@ -2,4 +2,5 @@
 
 - ant-design
 - redux react-redux
+- redux-thunk
 - axios

@@ -1,7 +1,6 @@
 import {PokeCart} from './PokeCart';
 import React from 'react';
 import './PokemonList.css';
-import { useSelector } from 'react-redux';
 
 
 

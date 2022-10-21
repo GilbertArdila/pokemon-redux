@@ -1,9 +1,9 @@
-import { SET_FAVORITE, SET_FAVORITE_ARRAY, SET_LOADING, SET_POKEMONS } from "../actions/types";
+import { SET_FAVORITE, SET_LOADING, SET_POKEMONS } from "../actions/types";
 
 const initialState={
     pokemons:[],
     loading:false,
-    favoritesList:[]
+    
 };
 
 export const pokemonsReducer=(state=initialState,action)=>{
