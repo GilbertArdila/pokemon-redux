@@ -5,7 +5,6 @@ import { getPokemon } from './api';
 import {Col,Spin} from 'antd';
 import { Searcher } from './components/Searcher';
 import { PokemonList } from './components/PokemonList';
-import { PokemonCart } from './components/PokemonCart';
 import logo from './statics/logo.svg';
 import './App.css';
 
